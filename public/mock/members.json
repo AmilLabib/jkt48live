@@ -1,0 +1,26 @@
+[
+  {
+    "roomId": 100101,
+    "name": "Imamura Mitsuki",
+    "description": "AKB48 Team A • Midnight radio companion with acoustic songs and sleepy talk",
+    "thumbnail": "https://static.showroom-live.com/image/room/cover/100101_square.jpeg",
+    "roomUrl": "https://www.showroom-live.com/r/IMAMURA_MITSUKI",
+    "profileUrl": "https://www.showroom-live.com/room/profile?room_id=100101"
+  },
+  {
+    "roomId": 100202,
+    "name": "Nagatomo Ayami",
+    "description": "Covering nostalgic idol songs langsung dari kamar latihan Team K",
+    "thumbnail": "https://static.showroom-live.com/image/room/cover/100202_square.jpeg",
+    "roomUrl": "https://www.showroom-live.com/r/NAGATOMO_AYAMI",
+    "profileUrl": "https://www.showroom-live.com/room/profile?room_id=100202"
+  },
+  {
+    "roomId": 100303,
+    "name": "Reina Adeline",
+    "description": "Belajar bahasa Jepang sambil request-an lagu favorit JKT48 fans",
+    "thumbnail": "https://static.showroom-live.com/image/room/cover/100303_square.jpeg",
+    "roomUrl": "https://www.showroom-live.com/r/REINA_ADEL",
+    "profileUrl": "https://www.showroom-live.com/room/profile?room_id=100303"
+  }
+]

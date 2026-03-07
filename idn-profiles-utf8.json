@@ -1,0 +1,380 @@
+﻿[
+  {
+    "uuid": "f001ba66-3c51-4849-9afa-13cf74eb1571",
+    "username": "jkt48_aralie",
+    "name": "Aralie JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/71e9df185dcc84e99ddf1dc97cc37467.webp?v=1768211620",
+    "short_id": "89rd8"
+  },
+  {
+    "uuid": "266ef38a-da00-4d13-ba77-f94da68599ee",
+    "username": "jkt48_delynn",
+    "name": "Delynn JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/59da93bbc2b0f06fa8a98329a93f1348.webp?v=1768211665",
+    "short_id": "4pnfb"
+  },
+  {
+    "uuid": "74e76417-0353-487f-b9b7-7520c0398e87",
+    "username": "jkt48_alya",
+    "name": "Alya JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/4687e56d35cdabb75910d301ebddc19c.webp?v=1768211696",
+    "short_id": "b67ll"
+  },
+  {
+    "uuid": "e8aa0877-684a-4430-8a3b-d96302e53aab",
+    "username": "jkt48_amanda",
+    "name": "Amanda JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/9d5b86900c2b0c8d7a8288bd584e0533.webp?v=1768211726",
+    "short_id": "hk1zg"
+  },
+  {
+    "uuid": "01506e57-d837-4a1e-8dd4-3e99e3489ac8",
+    "username": "jkt48_christy",
+    "name": "Christy JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/4e9f4a84addf88bc982b1bf1bfa6e4da.webp?v=1768211838",
+    "short_id": "kkj5v"
+  },
+  {
+    "uuid": "a5c72141-65a3-47be-86ef-1dc1feaab10d",
+    "username": "jkt48_anindya",
+    "name": "Anindya JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/bf258bddd53add17931bcd75a810831c.webp?v=1768211873",
+    "short_id": "w9nfx"
+  },
+  {
+    "uuid": "147e83c8-f3ac-4680-9141-2f518b4b7810",
+    "username": "jkt48_virgi",
+    "name": "Virgi JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/ea02d0c4199b0f536272811de09a3fc5.webp?v=1743097272",
+    "short_id": "p4k86"
+  },
+  {
+    "uuid": "f9500eb4-9d6d-491d-a857-40ca6f862d61",
+    "username": "jkt48_auwia",
+    "name": "Auwia JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/ea747b22051f3b65cd506cb3fe1cd989.webp?v=1743097318",
+    "short_id": "d6hks"
+  },
+  {
+    "uuid": "15dfee86-a928-4a15-8c90-6aa21097d0ff",
+    "username": "jkt48_lia",
+    "name": "Lia JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/774813dd4e183c97cb589eecb765b034.webp?v=1768211899",
+    "short_id": "b6mv4"
+  },
+  {
+    "uuid": "e2af7271-2598-4ee8-8760-68043e671e6d",
+    "username": "jkt48_lana",
+    "name": "Lana JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/a390f0bed11a773710648af657470bb8.webp?v=1768211952",
+    "short_id": "r8pxx"
+  },
+  {
+    "uuid": "e9170998-f026-4186-bbc5-a17a3b5b2af1",
+    "username": "jkt48_rilly",
+    "name": "Rilly JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/5e38d8edf838fca332ba020f7bb73ec2.webp?v=1743097350",
+    "short_id": "h33zh"
+  },
+  {
+    "uuid": "b0e628c8-0b0a-40c7-aa6a-a1c7660c25ce",
+    "username": "jkt48_erine",
+    "name": "Erine JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/d1cdcab90bc683da3f2e421af73c52b7.webp?v=1768211983",
+    "short_id": "v2chd"
+  },
+  {
+    "uuid": "f740e9da-772f-4ae2-8ddd-49f717aacf63",
+    "username": "jkt48_cathy",
+    "name": "Cathy JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/c4ff7cea9f58eaabe23a0fefa58961f0.webp?v=1768212004",
+    "short_id": "61flb"
+  },
+  {
+    "uuid": "e0ececb4-71d8-4f32-a221-ef21634a746a",
+    "username": "jkt48_elin",
+    "name": "Elin JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/0fb5a0de260626f7c1319567ce5e7f39.webp?v=1768212029",
+    "short_id": "9xpmg"
+  },
+  {
+    "uuid": "7e9a83b8-4fd8-42ad-b4b6-54c00fbbe28d",
+    "username": "jkt48_chelsea",
+    "name": "Chelsea JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/a9d8d28d9fb966c5f1e00f10fb9489c1.webp?v=1768212053",
+    "short_id": "539br"
+  },
+  {
+    "uuid": "0078fe3c-8f4d-495b-bb7c-bdb2b98d0598",
+    "username": "jkt48_oniel",
+    "name": "Oniel JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/b00afb482407c122800161b0bab0d04b.webp?v=1768212092",
+    "short_id": "rw8x4"
+  },
+  {
+    "uuid": "4f795073-38c9-4df7-9388-74b83de69801",
+    "username": "jkt48_cynthia",
+    "name": "Cynthia JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/cd9c4688b4d2fd6b3e7ef43465826dc2.webp?v=1768212117",
+    "short_id": "9vg7z"
+  },
+  {
+    "uuid": "33139b05-1c43-4b48-bba3-ec960b18b36e",
+    "username": "jkt48_danella",
+    "name": "Danella JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/be61050d0a932e43131b95020de99eb5.webp?v=1768212141",
+    "short_id": "7jxpy"
+  },
+  {
+    "uuid": "b11b0692-d0b8-464c-849a-9e81439a048c",
+    "username": "jkt48_daisy",
+    "name": "Daisy JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/6d067c899ba88ed2f4ca8f09d384501b.webp?v=1768212168",
+    "short_id": "6kfv2"
+  },
+  {
+    "uuid": "9c32c2bc-f74e-4420-8be8-f4ac863b8064",
+    "username": "jkt48_olla",
+    "name": "Olla JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/76a2fcff460e27571b5abe640d269819.webp?v=1768212194",
+    "short_id": "6tcvz"
+  },
+  {
+    "uuid": "13f4d35d-f3a7-482e-a593-91d664c7ffcc",
+    "username": "jkt48_feni",
+    "name": "Feni JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/268325bc9e2436c65ec85326117a9d7e.webp?v=1731411028",
+    "short_id": "qt6hc"
+  },
+  {
+    "uuid": "85482779-8b59-4995-a600-f8a4230c29d8",
+    "username": "jkt48_fiony",
+    "name": "Fiony JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/4a1041eb4337660663b4080dfca6be83.webp?v=1768212219",
+    "short_id": "mcb96"
+  },
+  {
+    "uuid": "12addeb8-6ec5-4cea-a3b4-ad86e9bfc8d1",
+    "username": "jkt48_freya",
+    "name": "Freya JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/0d71df1ffb62daecb081884679912476.webp?v=1768212243",
+    "short_id": "rzw86"
+  },
+  {
+    "uuid": "717109e0-a064-4f15-8187-5c4d46e56a58",
+    "username": "jkt48_fritzy",
+    "name": "Fritzy JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/f4d25811b1b50effd560fb480cac8ba0.webp?v=1768212267",
+    "short_id": "zchjr"
+  },
+  {
+    "uuid": "b0d1e6c3-d356-4b00-8d00-846e5297693b",
+    "username": "jkt48_ella",
+    "name": "Ella JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/9e5114433fc13ada649ff70b6bba8784.webp?v=1768212292",
+    "short_id": "g1wkc"
+  },
+  {
+    "uuid": "ab901d82-db49-488c-8d03-da0082ab70e2",
+    "username": "jkt48_gendis",
+    "name": "Gendis JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/9af4aed11c6b1ce2c87198ac05a17200.webp?v=1768212318",
+    "short_id": "5m67l"
+  },
+  {
+    "uuid": "82ffac10-ee56-43d0-ad38-ce432384cfe5",
+    "username": "jkt48_gita",
+    "name": "Gita JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/449dae836a829fdd6767c3268ac51d93.webp?v=1768212344",
+    "short_id": "1jm17"
+  },
+  {
+    "uuid": "cae4d972-5f14-4512-9706-37c1802a0541",
+    "username": "jkt48_gracie",
+    "name": "Gracie JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/b54dbd0f2ccde80f7fc4d40c575eed24.webp?v=1768212365",
+    "short_id": "lr6wm"
+  },
+  {
+    "uuid": "0b6b1a63-a0d6-4f4b-be5a-563a63fe279e",
+    "username": "jkt48_greesel",
+    "name": "Greesel JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/44057259b756c4d190b2283ebfb952b6.webp?v=1768212388",
+    "short_id": "35lf3"
+  },
+  {
+    "uuid": "3c97d6a6-6fc2-4e2b-b7f6-e94ebe9c3e93",
+    "username": "jkt48_giaa",
+    "name": "Giaa JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/1cf340bb3a2b74fb5ba8dd469fa999c3.webp?v=1743097386",
+    "short_id": "jvn3j"
+  },
+  {
+    "uuid": "1f119aa1-3482-44b6-9f68-2ad41c8d6743",
+    "username": "jkt48_eli",
+    "name": "Eli JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/0f4369fe4c881fe2dc077df5d1c6bba2.webp?v=1768212413",
+    "short_id": "y57b3"
+  },
+  {
+    "uuid": "e25cfed0-757c-424a-9b6e-85d4ef5b5192",
+    "username": "jkt48_lily",
+    "name": "Lily JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/82c594a3ba1e3ef986d941a4ec936fa9.webp?v=1768212435",
+    "short_id": "m2pn5"
+  },
+  {
+    "uuid": "7599c984-c466-4962-8c5b-73c1d33d59d9",
+    "username": "jkt48_maira",
+    "name": "Maira JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/70b9fc067b21bedcee7946cdd12e11d9.webp?v=1743097448",
+    "short_id": "tjbwd"
+  },
+  {
+    "uuid": "539f5185-1414-416c-b84d-2ad366b6d60a",
+    "username": "jkt48_indah",
+    "name": "Indah JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/909548d57b8bc9ce5b7784107fa36858.webp?v=1768212465",
+    "short_id": "f7gss"
+  },
+  {
+    "uuid": "85f369d7-6525-41c0-94b8-9a56686713eb",
+    "username": "jkt48_ekin",
+    "name": "Ekin JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/bcd54a4ea423aed142ea0e22ea9258a8.webp?v=1743097485",
+    "short_id": "blpgt"
+  },
+  {
+    "uuid": "92d66abb-0171-4a2b-a30d-37ad58359248",
+    "username": "jkt48_trisha",
+    "name": "Trisha JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/d1bf01da2e4e0962de325749930c1ee1.webp?v=1768212491",
+    "short_id": "lf4cc"
+  },
+  {
+    "uuid": "fe70498c-cb4c-4f98-9ad8-e0bd3fe2c453",
+    "username": "jkt48_jemima",
+    "name": "Jemima JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/54c286f829c7ff60a713e07d607edcc2.webp?v=1743097513",
+    "short_id": "s9965"
+  },
+  {
+    "uuid": "a9579a29-9203-40c0-9326-9837b8eae6e8",
+    "username": "jkt48_jessi",
+    "name": "Jessi JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/dfa51cbb14d8a3185c35228f1f765ae5.webp?v=1768212522",
+    "short_id": "9l3xf"
+  },
+  {
+    "uuid": "73aa1a4d-7482-41be-b28e-25e0b6c7b967",
+    "username": "jkt48_lyn",
+    "name": "Lyn JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/ee2e0cc39430cd350beff149bf93ee6d.webp?v=1768212571",
+    "short_id": "71mvq"
+  },
+  {
+    "uuid": "c3d28bcd-d000-4ccc-a9bf-956853cfa433",
+    "username": "jkt48_kathrina",
+    "name": "Kathrina JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/4be4288584db41e48aad4777ce9fa167.webp?v=1768212595",
+    "short_id": "2zgwh"
+  },
+  {
+    "uuid": "531d1bc0-ee91-475f-9e9d-098127b8d383",
+    "username": "jkt48_lulu",
+    "name": "Lulu JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/36ba8026da4af74247c2a8ddf919b6d3.webp?v=1768212695",
+    "short_id": "2yxpq"
+  },
+  {
+    "uuid": "e27569d2-0d2a-4cd8-a0a6-ca2da28e0a62",
+    "username": "jkt48_marsha",
+    "name": "Marsha JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/fca5baa79d491e3ae5767af905c1b25b.webp?v=1768212726",
+    "short_id": "f8gqp"
+  },
+  {
+    "uuid": "6970e68a-b488-497a-b793-3a735db5e997",
+    "username": "jkt48_michie",
+    "name": "Michie JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/618c8c824495bd9efea619a7fee89482.webp?v=1768212750",
+    "short_id": "kc8dt"
+  },
+  {
+    "uuid": "35d8f1d5-fd07-4109-9ec5-d202f4baf3c1",
+    "username": "jkt48_levi",
+    "name": "Levi JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/8837c76a4b89b253cc04fb60f4af2ab6.webp?v=1768212774",
+    "short_id": "pmt6z"
+  },
+  {
+    "uuid": "9f308a8f-29cb-45c0-9df2-6ffd16bc9298",
+    "username": "jkt48_muthe",
+    "name": "Muthe JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/2c80aa74f8816d0b98562d912d6e9ac1.webp?v=1768212798",
+    "short_id": "kfhc7"
+  },
+  {
+    "uuid": "e243be19-74b7-435b-8e19-13fc669e0224",
+    "username": "jkt48_nayla",
+    "name": "Nayla JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/910f26252548bf370c7492e9ec668250.webp?v=1768212822",
+    "short_id": "pzw2s"
+  },
+  {
+    "uuid": "21a420b0-dd01-4daa-b185-b9020f8bf69d",
+    "username": "jkt48_nachia",
+    "name": "Nachia JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/48887ca3b5d4c5cce2d53cee2e024118.webp?v=1768212875",
+    "short_id": "rctm5"
+  },
+  {
+    "uuid": "cbc0bbe1-d6ea-4646-bfcf-24b3a642fa21",
+    "username": "jkt48_intan",
+    "name": "Intan JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/d8906cd39a85bd0a92a38e1dc0733182.webp?v=1743097568",
+    "short_id": "59vjk"
+  },
+  {
+    "uuid": "a2b5d818-475d-44ce-af52-e99526482aaf",
+    "username": "jkt48_oline",
+    "name": "Oline JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/09ea7e6a6a2e99103b3386f154a5c54a.webp?v=1768212897",
+    "short_id": "hny55"
+  },
+  {
+    "uuid": "728d224e-6ccb-43d2-a029-a0147dc7fdee",
+    "username": "jkt48_raisha",
+    "name": "Raisha JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/7646a44d606dc17fedf5f425a8df2c96.webp?v=1768212992",
+    "short_id": "7b5j8"
+  },
+  {
+    "uuid": "3cbe26d9-ff3f-4985-bbe1-c4403908124a",
+    "username": "jkt48_ribka",
+    "name": "Ribka JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/7c3e9142730d1eb21db56de1eaa161d2.webp?v=1768213013",
+    "short_id": "nyg2b"
+  },
+  {
+    "uuid": "8fc7ad64-f7be-492b-97b6-2dae3378dfe2",
+    "username": "jkt48_nala",
+    "name": "Nala JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/23ec81c50947a98e513e2371ccd140e5.webp?v=1768213114",
+    "short_id": "4zlzy"
+  },
+  {
+    "uuid": "ffbdaf60-9c8c-4897-82ef-fc3e7f6deb9c",
+    "username": "jkt48_gracia",
+    "name": "Gracia JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/8b2dd0777668736234fab4f6f4be90c8.webp?v=1731411029",
+    "short_id": "m446w"
+  },
+  {
+    "uuid": "52c5c190-3611-4def-866f-76c32c0b837e",
+    "username": "jkt48_kimmy",
+    "name": "Kimmy JKT48",
+    "avatar": "https://cdn.idn.media/idnaccount/avatar/500/0211ecb3421937efbcb2433a9323fcc1.webp?v=1768213135",
+    "short_id": "hgvtk"
+  }
+]

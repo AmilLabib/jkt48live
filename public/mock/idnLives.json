@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-03-06T00:00:00.000Z",
+  "lives": [
+    {
+      "username": "jkt48_freya",
+      "slug": "mock-idn-freya-live",
+      "title": "Mock IDN Live - Freya",
+      "status": "live",
+      "startedAt": 1730918400000,
+      "playbackUrl": "https://playback.live-video.net/mock/freya.m3u8",
+      "imageUrl": "https://cdn.idn.media/idnaccount/avatar/500/0d71df1ffb62daecb081884679912476.webp",
+      "viewCount": 1234
+    }
+  ]
+}

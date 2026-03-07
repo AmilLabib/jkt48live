@@ -1,0 +1,73 @@
+{
+  "onlives": [
+    {
+      "genre_id": 1001,
+      "genre_name": "AKB48",
+      "lives": [
+        {
+          "room_id": 100101,
+          "room_url_key": "akb48_team_a_test",
+          "main_name": "Imamura Mitsuki",
+          "image": "https://static.showroom-live.com/image/room/cover/100101.jpeg",
+          "image_square": "https://static.showroom-live.com/image/room/cover/100101_square.jpeg",
+          "telop": "Midnight Radio Session",
+          "view_num": 842,
+          "follower_num": 12938,
+          "started_at": 1772638800,
+          "live_id": 555001,
+          "streaming_url_list": [
+            {
+              "url": "https://stream.example.com/live/100101/playlist.m3u8",
+              "label": "Auto",
+              "type": "hls",
+              "id": 1,
+              "quality": 720
+            }
+          ]
+        },
+        {
+          "room_id": 100202,
+          "room_url_key": "akb48_team_k_test",
+          "main_name": "Nagatomo Ayami",
+          "image": "https://static.showroom-live.com/image/room/cover/100202.jpeg",
+          "image_square": "https://static.showroom-live.com/image/room/cover/100202_square.jpeg",
+          "telop": "Acoustic Covers",
+          "view_num": 612,
+          "follower_num": 10322,
+          "started_at": 1772637600,
+          "live_id": 555002,
+          "streaming_url_list": [
+            {
+              "url": "https://stream.example.com/live/100202/playlist.m3u8",
+              "label": "Auto",
+              "type": "hls",
+              "id": 1,
+              "quality": 720
+            }
+          ]
+        },
+        {
+          "room_id": 100303,
+          "room_url_key": "jkt48_reina_test",
+          "main_name": "Reina Adeline",
+          "image": "https://static.showroom-live.com/image/room/cover/100303.jpeg",
+          "image_square": "https://static.showroom-live.com/image/room/cover/100303_square.jpeg",
+          "telop": "Belajar bareng sambil nyanyi",
+          "view_num": 980,
+          "follower_num": 20110,
+          "started_at": 1772637000,
+          "live_id": 555003,
+          "streaming_url_list": [
+            {
+              "url": "https://stream.example.com/live/100303/playlist.m3u8",
+              "label": "Auto",
+              "type": "hls",
+              "id": 1,
+              "quality": 1080
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
