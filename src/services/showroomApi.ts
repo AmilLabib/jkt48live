@@ -10,7 +10,7 @@ const MOCK_ONLIVES_PATH = `${MOCK_BASE}/onlives.json`;
 const MOCK_COMMENTS_PATH = `${MOCK_BASE}/comments.json`;
 const MOCK_MEMBERS_PATH = `${MOCK_BASE}/members.json`;
 const ASSET_PROXY_PREFIX = "https://wsrv.nl/?url=";
-const STREAM_PROXY_PREFIX = "/proxy/stream?url=";
+const STREAM_PROXY_PREFIX = "/api/proxy/stream?url=";
 const CANONICAL_JKT_SHOWROOM_IDS = new Set(
   Object.values(membersShowroom).map((account) => account.roomId),
 );

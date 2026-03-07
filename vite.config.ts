@@ -6,14 +6,14 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
-const STREAM_PROXY_PATH = "/proxy/stream";
+const STREAM_PROXY_PATH = "/api/proxy/stream";
 const STREAM_REFERER = "https://www.showroom-live.com/";
 const STREAM_HOST_WHITELIST = [
   "showroom-live.com",
   "showroom-txlive.com",
   "playback.live-video.net",
 ];
-const IDN_GRAPHQL_PROXY_PATH = "/proxy/idn/graphql";
+const IDN_GRAPHQL_PROXY_PATH = "/api/proxy/idn/graphql";
 const IDN_GRAPHQL_ENDPOINT = "https://api.idn.app/graphql";
 
 function toProxyUrl(url: string) {

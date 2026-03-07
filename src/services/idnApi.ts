@@ -1,6 +1,6 @@
 import { IDN_CHANNELS, type IdnChannelProfile } from "../data/idnChannels";
 
-const IDN_GRAPHQL_ENDPOINT = "/proxy/idn/graphql";
+const IDN_GRAPHQL_ENDPOINT = "/api/proxy/idn/graphql";
 
 interface IdnGraphqlLivestream {
   slug: string;
