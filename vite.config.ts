@@ -1,6 +1,7 @@
 import { Readable } from "node:stream";
 import type { ReadableStream } from "node:stream/web";
 import type { IncomingMessage, ServerResponse } from "node:http";
+import { brotliDecompressSync, gunzipSync } from "node:zlib";
 import type { Connect, PreviewServer, ViteDevServer } from "vite";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
@@ -194,6 +195,7 @@ function createIdnGraphqlProxyMiddleware(): Connect.NextHandleFunction {
         method: "POST",
         headers: {
           "content-type": "application/json",
+          "accept-encoding": "identity",
           origin: "https://www.idn.app",
           referer: "https://www.idn.app/",
         },
@@ -202,12 +204,35 @@ function createIdnGraphqlProxyMiddleware(): Connect.NextHandleFunction {
 
       res.statusCode = upstream.status;
       upstream.headers.forEach((value, key) => {
-        if (key === "set-cookie" || key === "content-length") return;
+        if (
+          key === "set-cookie" ||
+          key === "content-length" ||
+          key === "content-encoding"
+        )
+          return;
         res.setHeader(key, value);
       });
       setCorsHeaders(res, ["POST", "OPTIONS"]);
-      const payload = await upstream.text();
-      res.end(payload);
+      const encoding = upstream.headers.get("content-encoding");
+      let buffer = Buffer.from(await upstream.arrayBuffer());
+      let decoded = false;
+      try {
+        if (encoding === "br") {
+          buffer = brotliDecompressSync(buffer);
+          decoded = true;
+        } else if (encoding === "gzip") {
+          buffer = gunzipSync(buffer);
+          decoded = true;
+        }
+      } catch (error) {
+        console.error("IDN GraphQL proxy decompress error (dev)", error, {
+          encoding,
+        });
+      }
+      if (!decoded && encoding) {
+        res.setHeader("content-encoding", encoding);
+      }
+      res.end(buffer);
     } catch (error) {
       console.error("IDN GraphQL proxy error", error);
       res.statusCode = 502;

@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { brotliDecompressSync, gunzipSync } from "node:zlib";
 
 const IDN_GRAPHQL_ENDPOINT = "https://api.idn.app/graphql";
 
@@ -53,6 +54,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        "accept-encoding": "identity",
         origin: "https://www.idn.app",
         referer: "https://www.idn.app/",
       },
@@ -61,14 +63,36 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     res.statusCode = upstream.status;
     upstream.headers.forEach((value, key) => {
-      if (key === "set-cookie" || key === "content-length") {
+      if (
+        key === "set-cookie" ||
+        key === "content-length" ||
+        key === "content-encoding"
+      ) {
         return;
       }
       res.setHeader(key, value);
     });
     setCorsHeaders(res, ["POST", "OPTIONS"]);
-    const payload = await upstream.text();
-    res.end(payload);
+    const encoding = upstream.headers.get("content-encoding");
+    let buffer = Buffer.from(await upstream.arrayBuffer());
+    let decoded = false;
+    try {
+      if (encoding === "br") {
+        buffer = brotliDecompressSync(buffer);
+        decoded = true;
+      } else if (encoding === "gzip") {
+        buffer = gunzipSync(buffer);
+        decoded = true;
+      }
+    } catch (error) {
+      console.error("IDN GraphQL proxy decompress error", error, {
+        encoding,
+      });
+    }
+    if (!decoded && encoding) {
+      res.setHeader("content-encoding", encoding);
+    }
+    res.end(buffer);
   } catch (error) {
     console.error("IDN GraphQL proxy error", error);
     res.statusCode = 502;

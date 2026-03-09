@@ -1,6 +1,24 @@
 import { IDN_CHANNELS, type IdnChannelProfile } from "../data/idnChannels";
 
 const IDN_GRAPHQL_ENDPOINT = "/api/proxy/idn/graphql";
+const IDN_DEBUG_TAG = "[IDN GraphQL]";
+const isDebugEnabled =
+  import.meta.env.DEV ||
+  (typeof window !== "undefined" &&
+    Boolean(
+      (window as typeof window & { __IDN_DEBUG__?: boolean }).__IDN_DEBUG__,
+    ));
+
+function debugLog(message: string, payload?: unknown) {
+  if (!isDebugEnabled) {
+    return;
+  }
+  if (payload === undefined) {
+    console.debug(IDN_DEBUG_TAG, message);
+  } else {
+    console.debug(IDN_DEBUG_TAG, message, payload);
+  }
+}
 
 interface IdnGraphqlLivestream {
   slug: string;
@@ -48,13 +66,48 @@ function buildQuery(channels: IdnChannelProfile[]) {
 }
 
 async function executeGraphql(query: string) {
+  const requestId = Math.random().toString(36).slice(2, 8);
+  const startedAt = typeof performance !== "undefined" ? performance.now() : 0;
+  debugLog(`#${requestId} → sending query`, {
+    endpoint: IDN_GRAPHQL_ENDPOINT,
+    length: query.length,
+    snippet: query.slice(0, 120),
+  });
+
   const response = await fetch(IDN_GRAPHQL_ENDPOINT, {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ query }),
   });
 
-  const json = (await response.json()) as IdnGraphqlResponse;
+  const rawText = await response.text();
+  const durationMs =
+    startedAt && typeof performance !== "undefined"
+      ? Math.round(performance.now() - startedAt)
+      : undefined;
+
+  debugLog(`#${requestId} ← response meta`, {
+    status: response.status,
+    ok: response.ok,
+    durationMs,
+  });
+
+  let json: IdnGraphqlResponse;
+  try {
+    json = rawText ? (JSON.parse(rawText) as IdnGraphqlResponse) : {};
+  } catch (error) {
+    console.error(IDN_DEBUG_TAG, `#${requestId} JSON parse failed`, error, {
+      rawPreview: rawText.slice(0, 300),
+    });
+    throw error;
+  }
+
+  if (json.errors) {
+    console.error(IDN_DEBUG_TAG, `#${requestId} GraphQL errors`, json.errors);
+  } else {
+    debugLog(`#${requestId} data keys`, Object.keys(json.data ?? {}));
+  }
+
   if (!response.ok || json.errors) {
     const message = json.errors?.map((err) => err.message).join(" | ");
     throw new Error(
@@ -115,6 +168,9 @@ export async function fetchIdnLives() {
     return lives.sort((a, b) => b.viewCount - a.viewCount);
   } catch (error) {
     console.warn("Failed to fetch IDN lives", error);
+    if (isDebugEnabled) {
+      console.warn(IDN_DEBUG_TAG, "fetchIdnLives error detail", error);
+    }
     return [];
   }
 }
@@ -130,6 +186,12 @@ export async function fetchIdnLiveByUsername(username: string) {
     return lives[0] ?? null;
   } catch (error) {
     console.warn(`Failed to fetch IDN live for ${username}`, error);
+    if (isDebugEnabled) {
+      console.warn(IDN_DEBUG_TAG, "fetchIdnLiveByUsername error detail", {
+        username,
+        error,
+      });
+    }
     return null;
   }
 }
