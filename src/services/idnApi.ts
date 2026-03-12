@@ -1,6 +1,9 @@
 import { IDN_CHANNELS, type IdnChannelProfile } from "../data/idnChannels";
 
 const IDN_GRAPHQL_ENDPOINT = "/api/proxy/idn/graphql";
+const STREAM_PROBE_ENDPOINT = "/api/proxy/stream?url=";
+const STREAM_PROBE_TIMEOUT_MS = 4_000;
+const PLAYLIST_END_MARKER = "#ext-x-endlist";
 const IDN_DEBUG_TAG = "[IDN GraphQL]";
 const isDebugEnabled =
   import.meta.env.DEV ||
@@ -135,7 +138,7 @@ function normalizeLive(
     status: live.status ?? "live",
     startedAt: live.live_at ? Date.parse(live.live_at) : undefined,
     playbackUrl: live.playback_url,
-    imageUrl: live.image_url ?? channel.avatarUrl,
+    imageUrl: channel.avatarUrl,
     viewCount: live.view_count ?? 0,
     channel,
   };
@@ -158,6 +161,68 @@ function mapResponseToLives(
   return lives;
 }
 
+function buildStreamProbeUrl(playbackUrl: string) {
+  return `${STREAM_PROBE_ENDPOINT}${encodeURIComponent(playbackUrl)}`;
+}
+
+async function probePlaybackUrl(playbackUrl: string) {
+  if (typeof fetch === "undefined") {
+    return true;
+  }
+  const controller =
+    typeof AbortController !== "undefined" ? new AbortController() : null;
+  const timeoutId =
+    controller && typeof window !== "undefined"
+      ? window.setTimeout(() => controller.abort(), STREAM_PROBE_TIMEOUT_MS)
+      : null;
+  try {
+    const response = await fetch(buildStreamProbeUrl(playbackUrl), {
+      headers: { "x-idn-probe": "1" },
+      signal: controller?.signal,
+    });
+    if (!response.ok) {
+      debugLog("probe request failed", {
+        status: response.status,
+        url: playbackUrl,
+      });
+      return false;
+    }
+    const text = await response.text();
+    const normalized = text.toLowerCase();
+    if (!normalized.trim()) {
+      return false;
+    }
+    if (normalized.includes(PLAYLIST_END_MARKER)) {
+      debugLog("probe detected endlist marker", { url: playbackUrl });
+      return false;
+    }
+    return true;
+  } catch (error) {
+    debugLog("probe error", { url: playbackUrl, error });
+    return false;
+  } finally {
+    if (timeoutId && typeof window !== "undefined") {
+      window.clearTimeout(timeoutId);
+    }
+  }
+}
+
+async function filterPlayableLives(lives: IdnLive[]) {
+  if (!lives.length || typeof window === "undefined") {
+    return lives;
+  }
+  const checks = await Promise.all(
+    lives.map(async (live) => ({
+      live,
+      ok: await probePlaybackUrl(live.playbackUrl),
+    })),
+  );
+  const playable = checks
+    .filter((entry) => entry.ok)
+    .map((entry) => entry.live);
+  return playable;
+}
+
 export async function fetchIdnLives() {
   if (!IDN_CHANNELS.length) {
     return [];
@@ -165,7 +230,8 @@ export async function fetchIdnLives() {
   try {
     const data = await executeGraphql(buildQuery(IDN_CHANNELS));
     const lives = mapResponseToLives(data, IDN_CHANNELS);
-    return lives.sort((a, b) => b.viewCount - a.viewCount);
+    const playableLives = await filterPlayableLives(lives);
+    return playableLives.sort((a, b) => b.viewCount - a.viewCount);
   } catch (error) {
     console.warn("Failed to fetch IDN lives", error);
     if (isDebugEnabled) {
@@ -183,7 +249,8 @@ export async function fetchIdnLiveByUsername(username: string) {
   try {
     const data = await executeGraphql(buildQuery([channel]));
     const lives = mapResponseToLives(data, [channel]);
-    return lives[0] ?? null;
+    const playable = await filterPlayableLives(lives);
+    return playable[0] ?? null;
   } catch (error) {
     console.warn(`Failed to fetch IDN live for ${username}`, error);
     if (isDebugEnabled) {
