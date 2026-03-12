@@ -50,7 +50,6 @@ export default function HlsPlayer({ source, poster }: HlsPlayerProps) {
       playsInline
       autoPlay
       poster={poster}
-      muted
     />
   );
 }
