@@ -10,6 +10,10 @@ import {
 } from "../services/showroomApi";
 import type { CampaignMember, LiveRoom } from "../services/showroomApi";
 import { fetchIdnLives, type IdnLive } from "../services/idnApi";
+import {
+  ensureNotificationRegistration,
+  showNotification as showNativeNotification,
+} from "../services/notifications";
 
 const REFRESH_MS = 60_000;
 
@@ -147,12 +151,27 @@ export default function HomePage() {
     try {
       const result = await window.Notification.requestPermission();
       setNotificationPermission(result);
+      if (result === "granted") {
+        ensureNotificationRegistration();
+      }
     } catch (err) {
       console.error("Notification permission error", err);
     }
   }, []);
 
   useEffect(() => {
+    if (notificationPermission !== "granted") {
+      return;
+    }
+    const promise = ensureNotificationRegistration();
+    promise?.catch((error) => {
+      console.error("Notification service worker registration failed", error);
+    });
+  }, [notificationPermission]);
+
+  useEffect(() => {
+    let cancelled = false;
+
     const entries = [
       ...lives.map((live) => {
         const member = rosterMap.get(live.room_id);
@@ -175,29 +194,47 @@ export default function HomePage() {
         };
       }),
     ];
-    const currentIds = new Set(entries.map((entry) => entry.id));
 
-    if (notificationPermission !== "granted") {
-      previousLiveIds.current = currentIds;
-      return;
-    }
-    if (typeof window === "undefined" || !("Notification" in window)) {
-      return;
-    }
+    async function maybeNotify() {
+      const currentIds = new Set(entries.map((entry) => entry.id));
 
-    entries.forEach((entry) => {
-      if (!previousLiveIds.current.has(entry.id)) {
-        try {
-          new window.Notification(entry.message, {
-            icon: entry.icon,
-            tag: entry.id,
-          });
-        } catch (err) {
-          console.error("Failed to send notification", err);
-        }
+      if (notificationPermission !== "granted") {
+        previousLiveIds.current = currentIds;
+        return;
       }
-    });
-    previousLiveIds.current = currentIds;
+      if (typeof window === "undefined" || !("Notification" in window)) {
+        previousLiveIds.current = currentIds;
+        return;
+      }
+
+      const pendingEntries = entries.filter(
+        (entry) => !previousLiveIds.current.has(entry.id),
+      );
+      if (!pendingEntries.length) {
+        previousLiveIds.current = currentIds;
+        return;
+      }
+
+      await Promise.all(
+        pendingEntries.map((entry) =>
+          showNativeNotification(entry.message, {
+            icon: entry.icon,
+            badge: entry.icon,
+            tag: entry.id,
+          }),
+        ),
+      );
+
+      if (!cancelled) {
+        previousLiveIds.current = currentIds;
+      }
+    }
+
+    maybeNotify();
+
+    return () => {
+      cancelled = true;
+    };
   }, [
     lives,
     idnLives,
@@ -209,7 +246,7 @@ export default function HomePage() {
   return (
     <div className="relative isolate min-h-screen bg-background/95 text-white">
       <div className="pointer-events-none absolute inset-0 opacity-70">
-        <div className="absolute inset-y-0 left-1/2 w-[32rem] -translate-x-1/2 rounded-full bg-accent/20 blur-[160px]" />
+        <div className="absolute inset-y-0 left-1/2 w-lg -translate-x-1/2 rounded-full bg-accent/20 blur-[160px]" />
         <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-rose-500/20 blur-[140px]" />
       </div>
 
