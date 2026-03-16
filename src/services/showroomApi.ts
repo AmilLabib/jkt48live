@@ -38,7 +38,7 @@ export interface LiveRoom {
   streaming_url_list: StreamingUrl[];
 }
 
-interface OnLivesResponse {
+export interface OnLivesResponse {
   onlives: Array<{
     genre_id: number;
     genre_name: string;

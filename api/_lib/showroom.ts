@@ -52,7 +52,7 @@ export function parseCampaignMembers(html: string): CampaignMember[] {
 
   for (const card of cards) {
     const anchor = card.querySelector("a.room-url");
-    const roomId = Number(anchor?.getAttribute("data-room-id" ?? "0"));
+    const roomId = Number(anchor?.getAttribute("data-room-id") ?? "0");
     if (!roomId || seen.has(roomId)) {
       continue;
     }
